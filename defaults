@@ -1,4 +1,4 @@
 TERMINAL=kitty
 FILE_MANAGER=thunar
-BROWSER=firefox # NOTE: The reason it is set to firefox by default as most browsers such as thorium are not in the default repo and only exist in AUR or chaotic AUR.
+BROWSER=firefox # NOTE: The reason it is set to firefox by default is as most browsers such as thorium are not in the default repo and only exist in AUR or chaotic AUR.
 EDITOR=neovim
