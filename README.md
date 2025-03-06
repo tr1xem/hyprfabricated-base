@@ -1,4 +1,2 @@
 # hyprfabricated-base
-Base Dots for hyprfabricated (if ur installing it on arch minimal or just fun)
-
-Will install hyprfabricated.
+Base Dots for hyprfabricated (if you're installing it on arch minimal).

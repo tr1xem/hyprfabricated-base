@@ -13,3 +13,7 @@ pacman -S $BROWSER
 
 # Install text editor
 pacman -S --noconfirm --needed $EDITOR
+
+if [[ "$BLOAT" == "yes" ]]; then
+  pacman -S --noconfirm --needed gnome-clocks gnome-calculator
+fi

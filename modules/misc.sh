@@ -6,7 +6,7 @@ systemctl enable NetworkManager
 
 # Additional packages
 echo "Installing additional useful packages..."
-pacman -S --noconfirm --needed fastfetch git
+pacman -S --noconfirm --needed fastfetch git curl
 
 # Install common GPU drivers
 pacman -S --noconfirm --needed mesa
@@ -23,8 +23,8 @@ if lspci | grep -E -i "VGA|3D" | grep -q "Intel"; then
   pacman -S --noconfirm --needed vulkan-intel
 fi
 
-if [ -n "$aur_helper" ]; then
-  $aur_helper -S --noconfirm --needed auto-cpufreq
+if [ -n "$1" ]; then
+  $1 -S --noconfirm --needed auto-cpufreq
 else
   echo "No AUR helper installed. Skipping auto-cpufreq installation."
 fi

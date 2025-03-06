@@ -37,11 +37,34 @@ bash "$(dirname "$0")/modules/aur_helper.sh"
 ###########################################
 # Install essential basic packages
 ###########################################
-bash "$(dirname "$0")/modules/general_pkgs.sh"
+bash "$(dirname "$0")/modules/general_pkgs.sh" $aur_helper
 
 ###########################################
 # Install Other Basic Packages & Drivers
 ###########################################
 bash "$(dirname "$0")/modules/misc.sh"
 
+###########################################
+# Install Grub CyberRe theme
+###########################################
+echo "Install CyberRe grub theme? [Y/n]: "
+read -r choice
+case "$choice" in
+  "y"|"Y"|"")
+      bash "$(dirname "$0")/modules/grub_theme.sh"
+      ;;
+    "n"|"N")
+      echo "No grub theme will be installed."
+      ;;
+    *)
+      echo "Invalid option. No grub theme will be installed."
+      ;;
+  esac
+
 echo "Basic installation and setup complete."
+echo "Installing hyprfabricated..."
+
+###########################################
+# Install hyprfabricated
+###########################################
+curl -fsSL https://raw.githubusercontent.com/tr1xem/hyprfabricated/main/install.sh | bash
