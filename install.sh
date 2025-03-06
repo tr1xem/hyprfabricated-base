@@ -51,6 +51,7 @@ echo "Install CyberRe grub theme? [Y/n]: "
 read -r choice
 case "$choice" in
   "y"|"Y"|"")
+      echo "Installing CyberRe Grub theme..."
       bash "$(dirname "$0")/modules/grub_theme.sh"
       ;;
     "n"|"N")
